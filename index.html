@@ -16,7 +16,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    /* brand */
     --teal:#439195;
     --teal-light:#5ab0b5;
     --teal-dark:#2d6b6e;
@@ -25,17 +24,15 @@
     --cream:#f7f5f2;
     --gold:#c9a84c;
     --green:#3a7d44;
-    /* derived */
     --charcoal-2:#0a1414;
     --on-dark:#eef2f1;
     --muted-dark:#9aaaa8;
-    --ink-text:#16201f;        /* text on cream */
-    --muted-light:#5f6764;
+    --ink-text:#17211e;
+    --muted-light:#5b645f;
     --line-dark:rgba(255,255,255,.10);
     --line-dark-2:rgba(255,255,255,.17);
     --line-cream:rgba(13,26,26,.12);
     --radius:4px;
-    /* type */
     --display:"Oswald",Impact,sans-serif;
     --serif:"Cormorant Garamond",Georgia,serif;
     --sans:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
@@ -46,31 +43,24 @@
   body{background:var(--cream);color:var(--ink-text);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   ::selection{background:var(--teal);color:#fff}
   a{color:inherit;text-decoration:none}
-  .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 30px}
-  /* eyebrow / mono labels */
+  .wrap{width:100%;max-width:1340px;margin:0 auto;padding:0 34px}
   .eyebrow{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--teal)}
   .display{font-family:var(--display);font-weight:600;letter-spacing:.005em;line-height:.92;text-transform:uppercase}
   .ital{font-family:var(--serif);font-style:italic;font-weight:500}
 
-  /* ---------- NAV ---------- */
+  /* NAV */
   header.nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
-    padding:18px 30px;background:rgba(247,245,242,.85);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.35s}
-  header.nav.scrolled{border-bottom:1px solid var(--line-cream);padding:12px 30px;background:rgba(247,245,242,.96)}
+    padding:18px 34px;background:rgba(247,245,242,.85);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.35s}
+  header.nav.scrolled{border-bottom:1px solid var(--line-cream);padding:12px 34px;background:rgba(247,245,242,.96)}
   .brand{display:flex;align-items:center;gap:13px}
   .logo-k{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:.08em;color:var(--ink-text);line-height:1}
   .logo-sep{width:5px;height:5px;border-radius:50%;background:var(--teal)}
   .logo-full{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
   .logo-full b{color:var(--ink-text);font-weight:500}
   .logo-full span{color:var(--teal)}
-  .nav-right{display:flex;align-items:center;gap:18px}
-  .nav-links{display:flex;gap:26px;margin-right:6px}
-  .nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-light);transition:.25s}
-  .nav-links a:hover{color:var(--teal-dark)}
-  .nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#fff;background:var(--teal);padding:11px 20px;border-radius:var(--radius);transition:.28s}
-  .nav-cta:hover{background:var(--teal-dark)}
-  @media(max-width:860px){.nav-links{display:none}}
+  @media(max-width:520px){.logo-full{display:none}}
 
-  /* ---------- HERO (charcoal) ---------- */
+  /* HERO (charcoal) */
   .hero{position:relative;min-height:auto;display:flex;align-items:center;padding:104px 0 clamp(120px,15vw,165px);
     background:radial-gradient(120% 90% at 82% 6%,rgba(67,145,149,.18),transparent 55%),linear-gradient(180deg,var(--charcoal) 0%,var(--charcoal-2) 100%);color:var(--on-dark);overflow:hidden}
   .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
@@ -97,16 +87,31 @@
   .hero-credit .dot{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   .hero-credit b{color:var(--on-dark);font-weight:500}
 
-  /* ---------- BLACK BAND ---------- */
+  /* COACH NOTE (dark panel straddling hero bottom) */
+  .coach-float{position:relative;z-index:20;margin-top:clamp(-150px,-13vw,-104px);margin-bottom:clamp(10px,1.4vw,18px)}
+  .coach-panel{position:relative;max-width:1180px;margin:0 auto;border:1px solid rgba(255,255,255,.17);border-radius:var(--radius);
+    background:rgba(9,18,17,.74);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:0 34px 80px -44px rgba(0,0,0,.85);
+    padding:clamp(20px,2.4vw,30px) clamp(26px,5vw,58px);overflow:hidden;color:var(--on-dark)}
+  .coach-panel .watermark{font-size:clamp(150px,24vw,320px);right:-2vw;bottom:-7vw;left:auto;top:auto;transform:none;color:#fff;opacity:.035}
+  .cp-head{position:relative;z-index:2}
+  .cp-head .eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:16px}
+  .cp-head .eyebrow::before{content:"";width:34px;height:1px;background:var(--teal)}
+  .cp-title{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:clamp(26px,3.4vw,40px);line-height:.96;color:#fff;letter-spacing:.004em}
+  .cp-title em{display:block;font-family:var(--serif);font-style:italic;font-weight:500;text-transform:none;color:var(--teal-light);letter-spacing:0;font-size:.56em;margin-top:4px}
+  .cp-quote{position:relative;z-index:2;max-width:980px;margin:clamp(14px,1.8vw,20px) auto 0;text-align:center;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(19px,2.3vw,29px);line-height:1.28;color:#e2eae9}
+  .cp-quote .em{font-family:var(--mono);font-style:normal;font-weight:500;text-transform:uppercase;font-size:.52em;letter-spacing:.04em;color:var(--teal-light);vertical-align:.08em}
+  .cp-foot{position:relative;z-index:2;margin-top:clamp(16px,2.2vw,24px);padding-top:16px;border-top:1px solid var(--line-dark);text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-dark)}
+
+  /* BLACK BAND */
   .band{background:#0e0e0e;color:#fff;border-top:1px solid rgba(255,255,255,.06)}
-  .band .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 30px;flex-wrap:wrap}
+  .band .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 34px;flex-wrap:wrap}
   .band .lead{display:flex;align-items:center;gap:14px;font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:clamp(19px,2.6vw,30px);letter-spacing:.01em}
   .band .lead .pulse{width:9px;height:9px;border-radius:50%;background:var(--teal);animation:pulse 2.4s infinite}
   .band .lead span{color:var(--teal-light)}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(67,145,149,.5)}70%{box-shadow:0 0 0 12px rgba(67,145,149,0)}100%{box-shadow:0 0 0 0 rgba(67,145,149,0)}}
   .band .note{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-dark)}
 
-  /* ---------- SECTIONS ---------- */
+  /* SECTIONS */
   section.block{padding:clamp(80px,10vw,142px) 0;position:relative;overflow:hidden}
   .sec-head{max-width:800px;margin-bottom:60px;position:relative;z-index:2}
   .sec-head .eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:22px}
@@ -135,25 +140,9 @@
   .feat .fbody .rule{width:34px;height:2px;background:var(--teal);margin:12px 0 14px}
   .feat .fbody p{color:var(--muted-light);font-size:14.5px;line-height:1.65}
 
-  /* COACH NOTE (dark panel straddling hero bottom) */
-  .coach-float{position:relative;z-index:20;margin-top:clamp(-150px,-13vw,-104px);margin-bottom:clamp(10px,1.4vw,18px)}
-  .coach-panel{position:relative;max-width:1180px;margin:0 auto;border:1px solid rgba(255,255,255,.17);border-radius:var(--radius);
-    background:rgba(9,18,17,.74);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:0 34px 80px -44px rgba(0,0,0,.85);
-    padding:clamp(20px,2.4vw,30px) clamp(26px,5vw,58px);overflow:hidden;color:var(--on-dark)}
-  .coach-panel .watermark{font-size:clamp(150px,24vw,320px);right:-2vw;bottom:-7vw;left:auto;top:auto;transform:none;color:#fff;opacity:.035}
-  .cp-head{position:relative;z-index:2}
-  .cp-head .eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:16px}
-  .cp-head .eyebrow::before{content:"";width:34px;height:1px;background:var(--teal)}
-  .cp-title{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:clamp(26px,3.4vw,40px);line-height:.96;color:#fff;letter-spacing:.004em}
-  .cp-title em{display:block;font-family:var(--serif);font-style:italic;font-weight:500;text-transform:none;color:var(--teal-light);letter-spacing:0;font-size:.56em;margin-top:4px}
-  .cp-quote{position:relative;z-index:2;max-width:980px;margin:clamp(14px,1.8vw,20px) auto 0;text-align:center;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(19px,2.3vw,29px);line-height:1.28;color:#e2eae9}
-  .cp-quote .em{font-family:var(--mono);font-style:normal;font-weight:500;text-transform:uppercase;font-size:.52em;letter-spacing:.04em;color:var(--teal-light);vertical-align:.08em}
-  .cp-foot{position:relative;z-index:2;margin-top:clamp(16px,2.2vw,24px);padding-top:16px;border-top:1px solid var(--line-dark);text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-dark)}
-
   /* EARLY ACCESS (charcoal) */
   .access{background:radial-gradient(90% 120% at 88% 0%,rgba(67,145,149,.16),transparent 55%),var(--charcoal);color:var(--on-dark)}
   .access .watermark{font-size:clamp(170px,30vw,420px);right:-3vw;top:-2vw;color:#fff;opacity:.028}
-  .access .sec-head{display:none}
   .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;position:relative;z-index:2}
   @media(max-width:880px){.access-grid{grid-template-columns:1fr;gap:44px}}
   .gold-mark{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
@@ -165,7 +154,6 @@
   .promise{margin-top:32px;display:grid;gap:14px}
   .promise li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted-dark)}
   .promise li svg{flex:none;margin-top:3px}
-
   form.card{background:var(--charcoal-2);border:1px solid var(--line-dark-2);border-radius:var(--radius);padding:36px 32px}
   form.card .f-eyebrow{margin-bottom:24px}
   .field{margin-bottom:20px}
@@ -181,7 +169,6 @@
   .chip.active{border-color:var(--teal);color:var(--teal-light);background:rgba(67,145,149,.14)}
   form .submit{width:100%;justify-content:center;margin-top:8px}
   .form-fine{margin-top:16px;text-align:center;font-size:11.5px;color:#6f807d}
-
   .success{display:none;text-align:center;padding:34px 6px}
   .success.show{display:block;animation:fade .5s ease}
   .success .ring{width:64px;height:64px;border:1px solid var(--green);border-radius:50%;display:grid;place-items:center;margin:0 auto 22px;color:var(--green)}
@@ -214,14 +201,6 @@
     <span class="logo-sep"></span>
     <span class="logo-full"><b>KEY</b> <span>Fitness Transformation</span></span>
   </a>
-  <div class="nav-right">
-    <nav class="nav-links">
-      <a href="#system">The Platform</a>
-      <a href="#coach">Your Coach</a>
-      <a href="#access">Early Access</a>
-    </nav>
-    <a class="nav-cta" href="#access">Request Access</a>
-  </div>
 </header>
 
 <!-- HERO (charcoal) -->
